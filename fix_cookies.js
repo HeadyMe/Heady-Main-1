@@ -55,11 +55,11 @@ function fixLocalStorage(directory) {
         if (content !== original) {
           fs.writeFileSync(file, content);
           changed++;
-          console.log(`Secured Cookies: ${file}`);
+          process.stdout.write(`Secured Cookies: ${file}\n`);
         }
     } catch(e) {}
   });
-  console.log(`Total cookie files updated: ${changed}`);
+  process.stdout.write(`Total cookie files updated: ${changed}\n`);
 }
 
 fixLocalStorage('.');
